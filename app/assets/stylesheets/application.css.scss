@@ -1,0 +1,69 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require home
+ */
+
+$navbar-default-color: #FFF;
+$navbar-default-bg: #554c63;
+$navbar-default-link-color: #FFF;
+$navbar-default-link-hover-color: #FFF;
+$navbar-default-link-hover-bg: darken($navbar-default-bg, 10%);
+$input-border-focus: #a899e9;
+$font-family-sans-serif: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; 
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/*
+body {
+  padding-top: 70px; 
+}
+*/
+img.avatar {
+  max-width:120px;
+  max-height:120px;
+  min-height:120px;
+}
+
+.navbar .nav > li > a.btn.btn-info {
+  @extend .btn;
+  @extend .btn-info;
+}
+
+.navbar .nav > li > button.btn.btn-info {
+  @extend .btn;
+  @extend .btn-info;
+}
+
+#notice-panel {
+  text-align: center;
+  margin-top: -20px;
+}
+
+#alert-panel {
+  text-align: center;
+  margin-top: -20px;
+}
+
+fieldset.login-field {
+  margin-top: 100px;
+}
+
+.footer {
+  background: #dddbe0;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footer .copyright {
+
+}

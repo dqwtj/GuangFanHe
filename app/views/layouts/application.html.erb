@@ -1,14 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>GuangFanHe</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title><%= content_for?(:title) ? yield(:title) : "光合音乐" %></title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+	<nav class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+    	<div class="navbar-header">
+    		<h3 class="visible-xs" style="text-align: center; margin: 0px auto; width: 108px;">
+      			<a class="guanghe-logo text-hide" href="#">光合音乐</a>
+      		</h3>
+      		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".gh-nav-collapse">
+        		<span class="sr-only">Toggle navigation</span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+      		</button>
+    	</div>
+    	<ul class="nav navbar-nav hidden-xs">
+    		<li><a href="<%= root_path %>">首页</a></li>
+    		<li><a href="<%= admission_path %>">光合音乐入场券</a></li>
+    		<li><a href="<%= recruit_path %>">加入我们</a></li>
+    	</ul>
+    	<h3 class="hidden-xs" style="text-align: center; margin: 0px auto; width: 108px;">
+      		<a class="guanghe-logo text-hide" href="#">光合音乐</a>
+      	</h3>
+    	<div class="collapse navbar-collapse gh-nav-collapse">
+    		<ul class="nav navbar-nav visible-xs">
+    			<li><a href="<%= root_path %>">首页</a></li>
+    			<li><a href="<%= admission_path %>">光合音乐入场券</a></li>
+    			<li><a href="<%= recruit_path %>">加入我们</a></li>
+    		</ul>
+    	</div>
+	</div>
+	</nav>
+	
+	<div class="container">
+	<% if notice %>
+	<div data-alert class="alert alert-info col-md-8 col-md-offset-2" id="notice-panel">
+		<%= notice %>
+	</div>
+	<% end %>
+	<% if alert %>
+	<div data-alert class="alert alert-danger col-md-8 col-md-offset-2" id="alert-panel">
+		<%= alert %>
+	</div>
+	<% end %>
+	</div>
+	
+	<%= yield %>
+	
+	<div class="footer">
+		<div class="container">
+			<div class="copyright">
+				<span class="filings">
+					京ICP备14014730号-1
+				</span>
+				<br class="visible-xs" />
+				 © 2013-2014 光合音乐 版权所有
+			</div>
+		</div>
+	</div>
+	
+	<%= yield :scripts %>
 
 </body>
 </html>
