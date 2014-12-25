@@ -8,6 +8,10 @@ class HomeController < ApplicationController
      
   end
   
+  def join
+    
+  end
+  
   def recruit
     @recruit = Recruit.new
   end
